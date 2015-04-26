@@ -12,6 +12,7 @@ zone:	h021b1m2p1
 The script also saves and enables any changes to the zoning configuration. This can be suppressed with the '-e' flag.
 
 Options:
+	
 	-sh: Hostname for the SAN switch (Mandatory)
 	
 	-su: Username for the SAN switch (Default: admin)
