@@ -79,7 +79,7 @@ Options:
 
 Used for initial configuration. 
 
-- DHzoner.pl -h hawk006 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -n -e -f pod06_fabric		
+- `DHzoner.pl -h hawk006 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -n -e -f pod06_fabric`		
 
 Basic command to add a system to a SAN switch without enabling
 
