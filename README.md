@@ -4,7 +4,9 @@ By default the script will add zones to the switch. Currently configured zones w
 Ex. You want to add zones for hawk900 blade 1. If there are any zones already in the zoning configuration that match this script's naming scheme, they will be removed. Once they are removed, new zones will be created for the WWNNs the script finds for each card in blade 1.
 
 Zone configuration example. This zone is for hawk021, blade 2, mezz slot 2, port 1:
-zone:	h021b1m2p1	
+
+zone: h021b1m2p1	
+
 		50:01:43:80:26:e8:d4:74		- WWNN for m2p1
 		20:70:00:c0:ff:14:aa:ea		- WWNN for port on p2000
 		24:70:00:c0:ff:14:aa:ea		- WWNN for port on p2000
