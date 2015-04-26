@@ -4,7 +4,9 @@ By default the script will add zones to the switch. Currently configured zones w
 Ex. You want to add zones for hawk900 blade 1. If there are any zones already in the zoning configuration that match this script's naming scheme, they will be removed. Once they are removed, new zones will be created for the WWNNs the script finds for each card in blade 1.
 
 Zone configuration example. This zone is for hawk021, blade 2, mezz slot 2, port 1:
-zone:	h021b1m2p1	
+
+zone: h021b1m2p1	
+
 		50:01:43:80:26:e8:d4:74		- WWNN for m2p1
 		20:70:00:c0:ff:14:aa:ea		- WWNN for port on p2000
 		24:70:00:c0:ff:14:aa:ea		- WWNN for port on p2000
@@ -12,6 +14,7 @@ zone:	h021b1m2p1
 The script also saves and enables any changes to the zoning configuration. This can be suppressed with the '-e' flag.
 
 Options:
+	
 	-sh: Hostname for the SAN switch (Mandatory)
 	
 	-su: Username for the SAN switch (Default: admin)
@@ -71,22 +74,29 @@ Options:
 		By default any changes to the zoning configuration are saved and enabled. This flag will add the 
 		zones to the configuration, but will not enable.
 		
-Example commands:
+		
+# Example commands:
 
-# Used for initial configuration. 
-DHzoner.pl -h hawk006 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -n -e -f pod06_fabric		
+Used for initial configuration. 
 
-# Basic command to add a system to a SAN switch without enabling
-DHzoner.pl -h hawk007 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -e
+`DHzoner.pl -h hawk006 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -n -e -f pod06_fabric`		
 
-# Add only blades 2 and 3 to the zone configuration
-DHzoner.pl -h hawk007 -p password -c pod02p2k1a.cfg -sh pod01sansw1 -sp password -s 2,3
+Basic command to add a system to a SAN switch without enabling
 
-# Remove blades 2 and 3 from the zone configuration
-DHzoner.pl -h hawk007 -p password -c pod02p2k1a.cfg -sh pod01sansw1 -sp password -s 2,3 -r
+`DHzoner.pl -h hawk007 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -e`
 
-# Remove hawk007 from the zone configuration
-DHzoner.pl -h hawk007 -p password -sh pod01sansw1 -sp password -r
+Add only blades 2 and 3 to the zone configuration
 
-# Clear the SAN switch configuration
-DHzoner.pl -sh pod01sansw1 -sp password -l
+`DHzoner.pl -h hawk007 -p password -c pod02p2k1a.cfg -sh pod01sansw1 -sp password -s 2,3`
+
+Remove blades 2 and 3 from the zone configuration
+
+`DHzoner.pl -h hawk007 -p password -c pod02p2k1a.cfg -sh pod01sansw1 -sp password -s 2,3 -r`
+
+Remove hawk007 from the zone configuration
+
+`DHzoner.pl -h hawk007 -p password -sh pod01sansw1 -sp password -r`
+
+Clear the SAN switch configuration
+
+`DHzoner.pl -sh pod01sansw1 -sp password -l`
