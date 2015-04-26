@@ -74,22 +74,29 @@ Options:
 		By default any changes to the zoning configuration are saved and enabled. This flag will add the 
 		zones to the configuration, but will not enable.
 		
-Example commands:
+		
+# Example commands:
 
-# Used for initial configuration. 
+- Used for initial configuration. 
+
 DHzoner.pl -h hawk006 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -n -e -f pod06_fabric		
 
-# Basic command to add a system to a SAN switch without enabling
+- Basic command to add a system to a SAN switch without enabling
+
 DHzoner.pl -h hawk007 -p password -c pod01p2k1a.cfg -sh pod01sansw1 -sp password -e
 
-# Add only blades 2 and 3 to the zone configuration
+- Add only blades 2 and 3 to the zone configuration
+
 DHzoner.pl -h hawk007 -p password -c pod02p2k1a.cfg -sh pod01sansw1 -sp password -s 2,3
 
-# Remove blades 2 and 3 from the zone configuration
+- Remove blades 2 and 3 from the zone configuration
+
 DHzoner.pl -h hawk007 -p password -c pod02p2k1a.cfg -sh pod01sansw1 -sp password -s 2,3 -r
 
-# Remove hawk007 from the zone configuration
+- Remove hawk007 from the zone configuration
+
 DHzoner.pl -h hawk007 -p password -sh pod01sansw1 -sp password -r
 
-# Clear the SAN switch configuration
+- Clear the SAN switch configuration
+
 DHzoner.pl -sh pod01sansw1 -sp password -l
