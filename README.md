@@ -5,7 +5,7 @@ Ex. You want to add zones for hawk900 blade 1. If there are any zones already in
 
 Zone configuration example. This zone is for hawk021, blade 2, mezz slot 2, port 1:
 
-zone: h021b1m2p1	
+zone: h021b2m2p1	
 
 		50:01:43:80:26:e8:d4:74		- WWNN for m2p1
 		20:70:00:c0:ff:14:aa:ea		- WWNN for port on p2000
